@@ -18,5 +18,5 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+Route::post('add-user',[App\Http\Controllers\Auth\RegisterController::class, 'addUser'])->name('add.user');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

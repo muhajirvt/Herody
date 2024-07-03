@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 
 
 class RegisterController extends Controller
@@ -72,5 +73,29 @@ class RegisterController extends Controller
             'email'     => $data['email'],
             'password'  => Hash::make($data['password']),
         ]);
+    }
+
+    public function addUser(Request $request)
+    {
+        $validator = $this->validator($request->all());
+
+        if($validator->fails()) {
+
+            return response()->json([
+                'status'       => 0,
+                'message'      => $validator->errors()
+            ]);
+
+        } else {
+
+            $user = $this->create($request->all());
+
+            $this->guard()->login($user);
+
+            return response()->json([
+                'status'       => 1,
+                'redirectPath' => url('home')
+            ]);
+        }
     }
 }
