@@ -22,43 +22,43 @@ Follow these steps to set up the project locally.
 - Node.js & npm
 - MySQL
 
-### Steps
+Clone the repository:
 
-1. Clone the repository:
+`git clone https://github.com/muhajirvt/Herody`
 
-   git clone https://github.com/muhajirvt/Herody
+### Install dependencies:
 
-2. Install dependencies:
+`composer install`
 
-   Composer install
+`php artisan ui bootstrap --auth`
 
-   php artisan ui bootstrap --auth
+`npm install`
 
-   npm install & npm run dev
+`npm run dev`
 
-3. Set up the environment file:
+### Set up the environment file:
 
-   cp .env.example .env
+cp .env.example .env
 
-4. Configure your .env file with your database credentials.
+Configure your .env file with your database credentials.
 
-5. Run migrations:
+### Run migrations:
     
-    php artisan migrate 
+`php artisan migrate`
 
-6. to enable default credential run the seeder command using 
+to enable default credential run the seeder command using 
 
-    php artisan db:seed
+`php artisan db:seed`
 
-7.Serve the application:
+### Serve the application:
 
-    php artisan serve
+`php artisan serve`
 
 ### Usage
 
-    - Register a new user with a unique ID.
-    - Log in with registered credentials.
-    - Log out securely.
+- Register a new user with a unique ID.
+- Log in with registered credentials.
+- Log out securely.
    
 
 
