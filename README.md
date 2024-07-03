@@ -30,8 +30,6 @@ Clone the repository:
 
 `composer install`
 
-`php artisan ui bootstrap --auth`
-
 `npm install`
 
 `npm run dev`
@@ -41,6 +39,8 @@ Clone the repository:
 cp .env.example .env
 
 Configure your .env file with your database credentials.
+
+`php artisan config:clear`
 
 ### Run migrations:
     
